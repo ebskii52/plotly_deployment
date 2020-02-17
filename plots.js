@@ -9,6 +9,8 @@ function init() {
         .append("option")
         .text(sample)
         .property("value", sample);
+
+        optionChanged(sampleNames[0]);
     });
   })
 }
@@ -143,8 +145,6 @@ function buildCharts(sampleX) {
     sampless = data.samples;
     sampless = sampless.sort((a, b) => b.sample_values - a.sample_values);
     resultArray = sampless.filter(sampleObjX => sampleObjX.id == sampleX);
-
-    console.log(sampless)
 
     // Sample Values
     var sampleValues = resultArray[0].sample_values;
